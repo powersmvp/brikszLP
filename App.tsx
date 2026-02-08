@@ -45,6 +45,8 @@ function Reveal({ children, className = '' }: { children: React.ReactNode; class
 }
 
 export default function App() {
+  const [mobileMenuOpen, setMobileMenuOpen] = React.useState(false);
+
   return (
     <>
       <nav>
@@ -57,7 +59,27 @@ export default function App() {
           <a href="#dados" className="nav-link">Inteligência</a>
           <a href="#contato" className="nav-cta">Fale conosco</a>
         </div>
+        <button
+          className="mobile-menu-toggle"
+          onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
+          aria-label="Toggle menu"
+        >
+          <span className={mobileMenuOpen ? 'open' : ''}></span>
+          <span className={mobileMenuOpen ? 'open' : ''}></span>
+          <span className={mobileMenuOpen ? 'open' : ''}></span>
+        </button>
       </nav>
+
+      {mobileMenuOpen && (
+        <div className="mobile-menu-overlay" onClick={() => setMobileMenuOpen(false)} />
+      )}
+
+      <div className={`mobile-menu ${mobileMenuOpen ? 'open' : ''}`}>
+        <a href="#solucoes" className="mobile-menu-link" onClick={() => setMobileMenuOpen(false)}>Soluções</a>
+        <a href="#casos" className="mobile-menu-link" onClick={() => setMobileMenuOpen(false)}>Blocos</a>
+        <a href="#dados" className="mobile-menu-link" onClick={() => setMobileMenuOpen(false)}>Inteligência</a>
+        <a href="#contato" className="mobile-menu-link mobile-menu-cta" onClick={() => setMobileMenuOpen(false)}>Fale conosco</a>
+      </div>
 
       <section className="hero">
         <div className="hero-bg" />

@@ -568,9 +568,8 @@ footer {
 .footer-link:hover { color: var(--cyan); }
 .footer-social { font-size: 0.8rem; color: var(--gray-50); text-decoration: none; transition: color 0.3s; }
 .footer-social:hover { color: var(--cyan); }
-.footer-bottom { padding-top: 2rem; border-top: 1px solid var(--gray-border); display: flex; flex-direction: column; gap: 0.5rem; }
+.footer-bottom { padding-top: 2rem; border-top: 1px solid var(--gray-border); }
 .footer-copy { font-size: 0.75rem; color: var(--gray-30); font-weight: 300; text-align: center; }
-.footer-love { font-size: 0.75rem; color: var(--gray-50); font-weight: 300; text-align: center; }
 
 /* Animations */
 @keyframes fadeUp { from { opacity: 0; transform: translateY(25px); } to { opacity: 1; transform: translateY(0); } }

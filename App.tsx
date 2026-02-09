@@ -281,6 +281,7 @@ export default function App() {
 
         <div className="footer-bottom">
           <div className="footer-copy">&copy; 2025 brikz. Todos os Direitos Reservados.</div>
+          <div className="footer-love">Feito com ❤️ em São Paulo, nossa querida terra da garoa</div>
         </div>
       </footer>
     </>

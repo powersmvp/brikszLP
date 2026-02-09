@@ -163,6 +163,11 @@ export default function App() {
 
       <section className="how" id="como">
         <Reveal>
+          <div className="blocks-animation">
+            <div className="block block-1"></div>
+            <div className="block block-2"></div>
+            <div className="block block-3"></div>
+          </div>
           <div className="line-accent" style={{ margin: '0 auto 1.5rem' }} />
           <div className="section-label">Como funciona</div>
           <div className="section-title">Escolha. Combine. Opere.</div>
@@ -231,12 +236,19 @@ export default function App() {
 
       <section className="closing" id="contato">
         <Reveal>
-          <div className="line-accent" style={{ margin: '0 auto 1.5rem' }} />
-          <div className="section-label">Próximo passo</div>
-          <div className="section-title">Pare de construir do zero.<br />Monte com brikz.</div>
-          <p className="section-desc">Escolha os blocos que sua operação precisa. A infraestrutura é nossa. A solução é sua.</p>
-          <div className="closing-cta">
-            <a href="mailto:contato@brikz.com.br" className="btn-primary">Fale com a gente</a>
+          <div className="closing-content">
+            <div className="closing-text">
+              <div className="line-accent" style={{ margin: '0 0 1.5rem' }} />
+              <div className="section-label">Próximo passo</div>
+              <div className="section-title">Pare de construir do zero.<br />Monte com a brikz.</div>
+              <p className="section-desc">Escolha os blocos que sua operação precisa. A infraestrutura é nossa. A solução é sua.</p>
+              <div className="closing-cta">
+                <a href="mailto:hi@brikz.io" className="btn-primary">Fale com a gente</a>
+              </div>
+            </div>
+            <div className="closing-image">
+              <img src="https://17uumjmuih.ufs.sh/f/TrFfSLZlNSd2TOVawdZlNSd2DUhj8z9qitZpLyX3YxmArg1s" alt="Profissional sorrindo" />
+            </div>
           </div>
         </Reveal>
       </section>
@@ -258,7 +270,7 @@ export default function App() {
 
           <div className="footer-col">
             <h4 className="footer-title">Contato</h4>
-            <a href="mailto:contato@brikz.com.br" className="footer-link">contato@brikz.com.br</a>
+            <a href="mailto:hi@brikz.io" className="footer-link">hi@brikz.io</a>
           </div>
 
           <div className="footer-col">

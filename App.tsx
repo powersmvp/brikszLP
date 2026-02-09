@@ -85,7 +85,7 @@ export default function App() {
         <div className="hero-bg" />
         <div className="hero-fade" />
         <div className="hero-content">
-          <div className="hero-label">Agentic Solutions in Blocks</div>
+          <div className="hero-label">Soluções Agênticas em Blocos</div>
           <h1>Construa soluções de negócios com nossas <span className="cyan">aplicações agênticas</span></h1>
           <p className="hero-sub">Monte a combinação que sua operação precisa — cada bloco é um agente pronto para rodar.</p>
           <div className="hero-cta-row">
@@ -245,7 +245,7 @@ export default function App() {
         <div className="footer-main">
           <div className="footer-col">
             <img src={LOGO_URL} alt="brikz." className="footer-logo-img" />
-            <p className="footer-tagline">Agentic Solutions in Blocks</p>
+            <p className="footer-tagline">Soluções Agênticas em Blocos</p>
           </div>
 
           <div className="footer-col">

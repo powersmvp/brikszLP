@@ -174,7 +174,7 @@ const TRANSLATIONS: Record<Lang, Translation> = {
       label: 'Agentic building blocks',
       titlePrefix: 'Run your operation on ',
       titleHighlight: 'agentic applications',
-      titleSuffix: ' — block by block.',
+      titleSuffix: ' block by block.',
       sub: 'Pick the mix your operation needs. Each block ships as a working agent, ready to run.',
       ctaPrimary: 'Book a demo',
       ctaGhost: 'Browse the blocks',
@@ -263,10 +263,37 @@ const TRANSLATIONS: Record<Lang, Translation> = {
   },
 };
 
+const BR_TIMEZONES = new Set([
+  'America/Sao_Paulo',
+  'America/Bahia',
+  'America/Fortaleza',
+  'America/Recife',
+  'America/Maceio',
+  'America/Belem',
+  'America/Manaus',
+  'America/Cuiaba',
+  'America/Boa_Vista',
+  'America/Porto_Velho',
+  'America/Rio_Branco',
+  'America/Eirunepe',
+  'America/Noronha',
+  'America/Araguaina',
+  'America/Campo_Grande',
+  'America/Santarem',
+  'Brazil/East',
+  'Brazil/West',
+  'Brazil/Acre',
+  'Brazil/DeNoronha',
+]);
+
 function getInitialLang(): Lang {
   if (typeof window === 'undefined') return 'pt';
   const stored = window.localStorage.getItem('brikz-lang');
   if (stored === 'pt' || stored === 'en') return stored;
+  try {
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    if (tz && BR_TIMEZONES.has(tz)) return 'pt';
+  } catch {}
   const browser = window.navigator.language?.toLowerCase() ?? '';
   return browser.startsWith('pt') ? 'pt' : 'en';
 }

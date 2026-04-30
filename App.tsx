@@ -79,9 +79,9 @@ const TRANSLATIONS: Record<Lang, Translation> = {
     nav: { solucoes: 'Soluções', blocos: 'Blocos', inteligencia: 'Inteligência', cta: 'Fale conosco' },
     hero: {
       label: 'Soluções Agênticas em Blocos',
-      titlePrefix: 'Construa soluções de negócios com nossas ',
-      titleHighlight: 'aplicações agênticas',
-      titleSuffix: '',
+      titlePrefix: 'Plataforma ',
+      titleHighlight: 'agêntica',
+      titleSuffix: ' que transforma visão em escala.',
       sub: 'Monte a combinação que sua operação precisa — cada bloco é um agente pronto para rodar.',
       ctaPrimary: 'Quero conhecer',
       ctaGhost: 'Ver soluções',
@@ -172,9 +172,9 @@ const TRANSLATIONS: Record<Lang, Translation> = {
     nav: { solucoes: 'Solutions', blocos: 'Blocks', inteligencia: 'Intelligence', cta: 'Talk to us' },
     hero: {
       label: 'Agentic building blocks',
-      titlePrefix: 'Run your operation on ',
-      titleHighlight: 'agentic applications',
-      titleSuffix: ' — block by block.',
+      titlePrefix: '',
+      titleHighlight: 'Agentic',
+      titleSuffix: ' platform that turns vision into scale.',
       sub: 'Pick the mix your operation needs. Each block ships as a working agent, ready to run.',
       ctaPrimary: 'Book a demo',
       ctaGhost: 'Browse the blocks',
@@ -263,10 +263,37 @@ const TRANSLATIONS: Record<Lang, Translation> = {
   },
 };
 
+const BR_TIMEZONES = new Set([
+  'America/Sao_Paulo',
+  'America/Bahia',
+  'America/Fortaleza',
+  'America/Recife',
+  'America/Maceio',
+  'America/Belem',
+  'America/Manaus',
+  'America/Cuiaba',
+  'America/Boa_Vista',
+  'America/Porto_Velho',
+  'America/Rio_Branco',
+  'America/Eirunepe',
+  'America/Noronha',
+  'America/Araguaina',
+  'America/Campo_Grande',
+  'America/Santarem',
+  'Brazil/East',
+  'Brazil/West',
+  'Brazil/Acre',
+  'Brazil/DeNoronha',
+]);
+
 function getInitialLang(): Lang {
   if (typeof window === 'undefined') return 'pt';
   const stored = window.localStorage.getItem('brikz-lang');
   if (stored === 'pt' || stored === 'en') return stored;
+  try {
+    const tz = Intl.DateTimeFormat().resolvedOptions().timeZone;
+    if (tz && BR_TIMEZONES.has(tz)) return 'pt';
+  } catch {}
   const browser = window.navigator.language?.toLowerCase() ?? '';
   return browser.startsWith('pt') ? 'pt' : 'en';
 }
